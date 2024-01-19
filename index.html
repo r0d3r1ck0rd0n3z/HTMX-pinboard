@@ -1,24 +1,41 @@
 <html><head>
- <script src="https://unpkg.com/htmx.org@1.4.1"></script> 
+ <title>HTMX pinboard</title>
+<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+<script src="https://unpkg.com/htmx.org/dist/ext/client-side-templates.js"></script>
+<script src="https://unpkg.com/mustache@latest"></script>
 </head>
   <body>
 
-<p>HTMX calls a TEXT blob with user-defined HTML content, no extension</p>
+<div hx-ext="client-side-templates">
+<p>HTMX loads content of text files inside GitHub folder.</p>
 <div>
-<button class="TEXT_One"
-  hx-get="text.txt"
+<button class="JSON_One"
+        hx-get="https://api.github.com/repos/r0d3r1ck0rd0n3z/HTMX-pinboard/contents/text"
         hx-swap="innerHTML" 
-        hx-target="#contentOne"      
-        id="textTest"              
-        > Click to load TEXT
+        hx-target="#contentTarget" 
+        mustache-array-template="getMyContent" 
+        > Click to load text files
         </button>
-<pre id="contentOne">Waiting for input...</pre>
+
+ <a href="" id="newFiles"><button>Create a new text file</button></a>
+<ul id="contentTarget">Waiting for input...</ul>
 </div>
-<br><hr><br>  
 
-<a id="newFiles" href="">post new file</a>
+ 
+<template id="getMyContent">
+    
+{{#data}}
+<div class="contentItem">
+ <span hx-swap="innerHTML"
+           hx-get="https://raw.githubusercontent.com/r0d3r1ck0rd0n3z/HTMX-pinboard/master/{{path}}"     
+           hx-trigger="load delay:1s"></span>
+</div>
+{{/data}}
 
-<div id="textLink"></div>
+</template>
+
+ <br><hr><br>
+</div>
 
 <br><br><br><br>
 
@@ -39,25 +56,6 @@ const timestamp = `${year}${month}${day}${hours}${minutes}${seconds}`;
 let a = `https://github.com/r0d3r1ck0rd0n3z/HTMX-pinboard/new/master/text?filename=${timestamp}.txt`
 document.getElementById('newFiles').href = a;
     
-async function fetchAndFilterJSON() {
- try {
-   const apiUrl = "https://api.github.com/repos/r0d3r1ck0rd0n3z/HTMX-pinboard/git/trees/master?recursive=1";
-   const response = await fetch(apiUrl);
-
-   if (!response.ok) {
-     throw new Error(`HTTP error! status: ${response.status}`);
-   }
-
-   const data = await response.json();
-   const filteredPaths = data.tree.filter((item) => item.path.startsWith("text/"));
-   console.log(typeof filteredPaths);
-   console.log(filteredPaths);
- } catch (error) {
-   console.error("Error fetching or parsing JSON:", error);
- }
-}
-
-fetchAndFilterJSON();    
    </script>
   
 </body></html>
