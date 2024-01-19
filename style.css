@@ -10,8 +10,10 @@
     margin: 0px 10px 10px 10px;
     border-radius: 5px;
     width: 100%;
+    min-height: 10px;
     break-inside: avoid;
     box-sizing: border-box;
+    transition: height 3s;
 }
 
 .editLink {
