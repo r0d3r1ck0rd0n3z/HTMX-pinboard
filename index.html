@@ -8,7 +8,7 @@
   <body>
 
 <div hx-ext="client-side-templates">
-<p>HTMX loads content of text files saved inside the GitHub folder <a href="https://github.com/r0d3r1ck0rd0n3z/HTMX-pinboard/tree/master/text">here</a>.</p>
+<p>HTMX loads content of text files saved inside the GitHub folder <a href="https://github.com/r0d3r1ck0rd0n3z/HTMX-pinboard/tree/master/text" target="_blank">here</a>.</p>
  
 <div>
 <button class="JSON_One"
@@ -36,9 +36,9 @@
     
 {{#data}}
    <div class="contentItem">
-     <span hx-swap="innerHTML"
-           hx-get="https://raw.githubusercontent.com/r0d3r1ck0rd0n3z/HTMX-pinboard/master/{{path}}"     
-           hx-trigger="load delay:1s"></span>
+     <span hx-get="https://raw.githubusercontent.com/r0d3r1ck0rd0n3z/HTMX-pinboard/master/{{path}}" 
+           hx-swap="innerHTML" hx-indicator="#indicator" hx-trigger="load delay:1s">
+     </span>
    </div>
 {{/data}}
 
