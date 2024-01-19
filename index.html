@@ -37,9 +37,10 @@
     
 {{#data}}
    <div class="contentItem">
-     <span hx-get="https://raw.githubusercontent.com/r0d3r1ck0rd0n3z/HTMX-pinboard/master/{{path}}" 
+     <span hx-get="{{download_url}}" 
            hx-swap="innerHTML" hx-indicator="#indicator" hx-trigger="load delay:1s">
      </span>
+    <a href="{{html_url}}">Edit</a>
    </div>
 {{/data}}
 
