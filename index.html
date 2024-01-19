@@ -36,9 +36,9 @@
 <template id="getMyContent">
     
 {{#data}}
-   <div class="contentItem">
+   <div class="contentItem fade-me-in">
      <span hx-get="{{download_url}}" 
-           hx-swap="innerHTML" hx-indicator="#indicator" hx-trigger="load delay:1s">
+           hx-swap="innerHTML" hx-indicator="#indicator" hx-trigger="load delay:5s">
      </span>
     <div class="editLink"><a href="{{html_url}}" target="_blank">Edit</a></div>
    </div>
@@ -59,7 +59,7 @@ document.addEventListener('htmx:configRequest', (evt) => {
 });
 
 document.addEventListener('htmx:beforeOnLoad', (evt) => {
-    try{ console.log( evt.detail.target ) } catch { console.log('error') };
+    try{ console.log( evt.detail.target.getAttribute('hx-get') ) } catch { console.log('error') };
 });
  
 function newFile() {
