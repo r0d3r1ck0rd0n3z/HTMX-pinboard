@@ -57,12 +57,29 @@
 document.addEventListener('htmx:configRequest', (evt) => {
     evt.detail.headers = [];
 });
+
+// Catch duplicated items
 let fileList = [];
+let fileTick = 0;
 document.addEventListener('htmx:beforeOnLoad', (evt) => {
     try{ 
      let uID = evt.detail.target.getAttribute('id');  
-     fileList.push(uID);
+     
+     if( fileTick === 0 ) {
+      fileList.push(uID); 
+      ++fileTick; 
+      console.log('new!');
+      return
+     };
+     
+     if( fileList.includes(uID) ) { 
+      console.log('old');
+      return 
+     };
+     
+     fileList.push(uID)
      console.log(fileList);
+     
     } catch { console.log('error') };
 });
  
