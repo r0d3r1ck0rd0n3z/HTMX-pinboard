@@ -2,6 +2,7 @@
     display: block;
     flex-flow: wrap;
     column-count: 4;
+    width: 95%;
 }
 
 .contentItem {
