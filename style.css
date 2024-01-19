@@ -1,6 +1,7 @@
 #contentTarget {
-    display: flex;
+    display: block;
     flex-flow: wrap;
+    column-count: 4;
 }
 
 .contentItem {
@@ -10,6 +11,7 @@
     border-radius: 5px;
     width: fit-content;
     min-width: 100px;
+    break-inside: avoid;
 }
 
 /* 
