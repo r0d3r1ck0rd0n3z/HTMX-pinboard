@@ -16,7 +16,7 @@
 </div>
 <br><hr><br>  
 
-<a href="https://github.com/r0d3r1ck0rd0n3z/HTMX-pinboard/new/master/text?filename=20240124.txt">post new file</a>
+<a id="newFiles" href="">post new file</a>
 
 <div id="textLink"></div>
 
@@ -36,10 +36,8 @@ const seconds = String(now.getSeconds()).padStart(2, '0');
 
 // Combine the components into the desired format
 const timestamp = `${year}${month}${day}${hours}${minutes}${seconds}`;
-
-// Display the timestamp
-document.getElementById(textLink).innerText = timestamp;
-
+let a = `https://github.com/r0d3r1ck0rd0n3z/HTMX-pinboard/new/master/text?filename=${timestamp}.txt`
+document.getElementById('newFiles').href = a;
     
    </script>
   
