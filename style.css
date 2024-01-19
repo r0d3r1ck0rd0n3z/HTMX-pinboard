@@ -7,7 +7,7 @@
 .contentItem {
     border: solid 1px gray;
     padding: 10px;
-    margin: 10px;
+    margin: 0px 10px 10px 10px;
     border-radius: 5px;
     width: 100%;
     break-inside: avoid;
