@@ -35,7 +35,7 @@
 <template id="getMyContent">
     
 {{#data}}
-   <div class="contentItem fade-me-in">
+   <div class="contentItem fade-me-in" hx-preserve>
     <span id="indicator" class="custom-loader htmx-indicator"></span>
      <span hx-get="{{download_url}}" 
            hx-swap="innerHTML" hx-indicator="#indicator" hx-trigger="load delay:5s" id="{{name}}">
