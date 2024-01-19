@@ -58,6 +58,10 @@ document.addEventListener('htmx:configRequest', (evt) => {
     evt.detail.headers = [];
 });
 
+document.addEventListener('htmx:afterOnLoad', (evt) => {
+    console.log( evt.detail.target );
+});
+ 
 function newFile() {
 // Get the current date and time
 const now = new Date();
