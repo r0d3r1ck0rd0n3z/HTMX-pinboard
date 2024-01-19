@@ -24,8 +24,7 @@
  <button onclick="newFile()">Create a new text file</button>
  
  <br><hr><br> 
-   <span id="indicator" class="custom-loader htmx-indicator"> &nbsp;
-  </span>
+   <span id="indicator" class="custom-loader htmx-indicator"></span>
  
  <div id="contentTarget" hx-boost="true">
 
@@ -37,6 +36,7 @@
     
 {{#data}}
    <div class="contentItem fade-me-in">
+    <span id="indicator" class="custom-loader htmx-indicator"></span>
      <span hx-get="{{download_url}}" 
            hx-swap="innerHTML" hx-indicator="#indicator" hx-trigger="load delay:5s" id="{{name}}">
      </span>
