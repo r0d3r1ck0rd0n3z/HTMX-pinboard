@@ -1,5 +1,6 @@
 #contentTarget {
     display: flex;
+    flex-flow: wrap;
 }
 
 .contentItem {
