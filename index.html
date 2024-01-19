@@ -3,6 +3,7 @@
 <script src="https://unpkg.com/htmx.org@1.9.10"></script>
 <script src="https://unpkg.com/htmx.org/dist/ext/client-side-templates.js"></script>
 <script src="https://unpkg.com/mustache@latest"></script>
+<link rel="stylesheet" href="styles.css"> 
 </head>
   <body>
 
@@ -19,7 +20,7 @@
         </button>
 
  <button onclick="newFile()">Create a new text file</button>
- <div id="contentTarget">Waiting for input...</div>
+ <div id="contentTarget" hx-boost="true">Waiting for input...</div>
 </div>
 
  
