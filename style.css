@@ -7,12 +7,11 @@
 .contentItem {
     border: solid 1px gray;
     padding: 10px;
-    margin: 2px;
+    margin: 10px;
     border-radius: 5px;
-    width: fit-content;
-    min-width: 100px;
-    max-wdith: 300px;
+    width: 100%;
     break-inside: avoid;
+    box-sizing: border-box;
 }
 
 .editLink {
