@@ -8,6 +8,7 @@
 
 <div hx-ext="client-side-templates">
 <p>HTMX loads content of text files saved inside the GitHub folder <a href="https://github.com/r0d3r1ck0rd0n3z/HTMX-pinboard/tree/master/text">here</a>.</p>
+ 
 <div>
 <button class="JSON_One"
         hx-get="https://api.github.com/repos/r0d3r1ck0rd0n3z/HTMX-pinboard/contents/text"
@@ -18,18 +19,18 @@
         </button>
 
  <button onclick="newFile()">Create a new text file</button>
-<ul id="contentTarget">Waiting for input...</ul>
+ <div id="contentTarget">Waiting for input...</div>
 </div>
 
  
 <template id="getMyContent">
     
 {{#data}}
-<div class="contentItem">
- <span hx-swap="innerHTML"
+   <div class="contentItem">
+     <span hx-swap="innerHTML"
            hx-get="https://raw.githubusercontent.com/r0d3r1ck0rd0n3z/HTMX-pinboard/master/{{path}}"     
            hx-trigger="load delay:1s"></span>
-</div>
+   </div>
 {{/data}}
 
 </template>
