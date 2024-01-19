@@ -16,13 +16,19 @@
         hx-swap="innerHTML" 
         hx-target="#contentTarget" 
         mustache-array-template="getMyContent" 
-        class="indicator"
+        hx-indicator="#indicator"
         > Click to load text files
         </button>
 
  <button onclick="newFile()">Create a new text file</button>
+ 
  <br><hr><br> 
- <div id="contentTarget" hx-boost="true"><span class="custom-loader htmx-indicator">Waiting for input...</span></div>
+ 
+ <div id="contentTarget" hx-boost="true">
+  <span id="indicator" class="custom-loader htmx-indicator">
+   Waiting for input...
+  </span>
+ </div>
 </div>
 
  
