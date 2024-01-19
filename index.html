@@ -59,7 +59,7 @@ document.addEventListener('htmx:configRequest', (evt) => {
 });
 
 document.addEventListener('htmx:afterOnLoad', (evt) => {
-    try{ console.log( evt.detail.target.src ) } catch { console.log('error') };
+    try{ console.log( evt.detail.target ) } catch { console.log('error') };
 });
  
 function newFile() {
