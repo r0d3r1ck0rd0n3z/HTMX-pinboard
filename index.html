@@ -58,7 +58,7 @@ document.addEventListener('htmx:configRequest', (evt) => {
     evt.detail.headers = [];
 });
 
-document.addEventListener('htmx:afterOnLoad', (evt) => {
+document.addEventListener('htmx:beforeOnLoad', (evt) => {
     try{ console.log( evt.detail.target ) } catch { console.log('error') };
 });
  
