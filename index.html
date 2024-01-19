@@ -7,7 +7,7 @@
   <body>
 
 <div hx-ext="client-side-templates">
-<p>HTMX loads content of text files inside GitHub folder.</p>
+<p>HTMX loads content of text files saved inside the GitHub folder <a href="https://github.com/r0d3r1ck0rd0n3z/HTMX-pinboard/tree/master/text">here</a>.</p>
 <div>
 <button class="JSON_One"
         hx-get="https://api.github.com/repos/r0d3r1ck0rd0n3z/HTMX-pinboard/contents/text"
@@ -17,7 +17,7 @@
         > Click to load text files
         </button>
 
- <a href="" id="newFiles" target="_blank"><button>Create a new text file</button></a>
+ <button onclick="newFile()">Create a new text file</button>
 <ul id="contentTarget">Waiting for input...</ul>
 </div>
 
@@ -39,7 +39,6 @@
 
 <br><br><br><br>
 
-   <iframe src="https://github.com/r0d3r1ck0rd0n3z/HTMX-pinboard/tree/master/text"></iframe>
 
 <!-- HELPER SCRIPTS -->   
 <script>
@@ -47,7 +46,8 @@
 document.addEventListener('htmx:configRequest', (evt) => {
     evt.detail.headers = [];
 });
-    
+
+function newFile() {
 // Get the current date and time
 const now = new Date();
 const year = now.getFullYear();
@@ -56,11 +56,12 @@ const day = String(now.getDate()).padStart(2, '0');
 const hours = String(now.getHours()).padStart(2, '0');
 const minutes = String(now.getMinutes()).padStart(2, '0');
 const seconds = String(now.getSeconds()).padStart(2, '0');
-
 // Combine the components into the desired format
 const timestamp = `${year}${month}${day}${hours}${minutes}${seconds}`;
 let a = `https://github.com/r0d3r1ck0rd0n3z/HTMX-pinboard/new/master/text?filename=${timestamp}.txt`
-document.getElementById('newFiles').href = a;
+window.open(a);
+};
+
     
    </script>
   
