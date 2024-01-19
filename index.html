@@ -1,0 +1,28 @@
+<html><head>
+ <script src="https://unpkg.com/htmx.org@1.4.1"></script> 
+</head>
+  <body>
+
+<p>HTMX calls a TEXT blob with user-defined HTML content, no extension</p>
+<div>
+<button class="TEXT_One"
+  hx-get="text.txt"
+        hx-swap="innerHTML" 
+        hx-target="#contentOne"      
+        id="textTest"              
+        > Click to load TEXT
+        </button>
+<pre id="contentOne">Waiting for input...</pre>
+</div>
+<br><hr><br>  
+
+<p>This is actually useful if you want to test HTMX with a specific TEXT format but you do not have a server at the moment. To view the generated TEXT blob, click the link below:</p>
+<div id="textLink"></div>
+
+<br><br><br><br>
+<small>
+<br>Collection of HTMX examples:
+<br>https://codepen.io/collection/NqrGQR
+</small> 
+  
+</body></html>
