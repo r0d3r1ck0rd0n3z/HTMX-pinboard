@@ -16,6 +16,14 @@
     transition: height 3s;
 }
 
+#fade-me-in.htmx-swapping {
+  opacity: 0;
+}
+#fade-me-in {
+  opacity: 1;
+  transition: opacity 1s ease-out;
+}
+
 .editLink {
     display: block;
     width: 100%;
