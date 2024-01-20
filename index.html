@@ -36,13 +36,13 @@
     
 {{#data}}
    <div class="contentItem">
-     <span hx-get="{{download_url}}" data-sha="{{sha}}" hx-swap="innerHTML"  
+     <span hx-get="{{download_url}}" data-sha="aaa{{sha}}" hx-swap="innerHTML"  
            hx-indicator="#indicator" hx-trigger="load delay:1s">
      <span id="indicator" class="custom-loader htmx-indicator"></span>      
      </span>
     <div id="{{sha}}"></div>
     <div class="editLink">
-     <a hx-get="{{download_url}}" hx-target=".{{sha}}" class="reload">Reload</a> &nbsp;
+     <a hx-get="{{download_url}}" hx-target=".aaa{{sha}}" class="reload">Reload</a> &nbsp;
      <a href="{{html_url}}" target="_blank">Edit</a>
     </div>
    </div>
