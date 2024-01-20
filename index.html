@@ -41,7 +41,7 @@
     
 {{#data}}
    <div class="contentItem">
-     <span hx-get="https://corsproxy.io/?{{download_url}}" data-sha="aaa{{sha}}" hx-swap="innerHTML"  
+     <span hx-get="{{download_url}}" data-sha="aaa{{sha}}" hx-swap="innerHTML"  
            hx-indicator="#indicator" hx-trigger="load delay:1s">
      <span id="indicator" class="custom-loader htmx-indicator"></span>      
      </span>
