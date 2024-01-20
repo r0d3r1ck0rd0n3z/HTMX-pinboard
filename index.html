@@ -130,9 +130,10 @@ function addHXpreserve(zzz) {
 let g = document.querySelectorAll('span[class^="target"]');
 g.forEach(g => {
   g.setAttribute('hx-preserve','');
+  htmx.process( g ); 
   })
 let h = document.querySelector('#contentTarget'); 
-htmx.process( h ) 
+htmx.process( h ); 
 console.log( zzz.getAttribute('id') );
 console.log( htmx.closest( zzz , 'span') ); 
 console.log( zzz );
