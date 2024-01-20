@@ -46,7 +46,7 @@
      <span id="indicator" class="custom-loader htmx-indicator"></span>      
      </span>
     <div class="editLink">
-     <a hx-get="{{download_url}}" hx-target=".target{{sha}}" hx-on:click="addHXpreserve()" class="reload">Reload</a> &nbsp;
+     <a hx-get="{{download_url}}" hx-target=".target{{sha}}" hx-on:click="addHXpreserve(this)" class="reload">Reload</a> &nbsp;
      <a href="{{html_url}}" target="_blank">Edit</a>
     </div>
    </div>
@@ -126,12 +126,13 @@ console.log('Reload success!');
  
 },1000); 
  
-function addHXpreserve() {
+function addHXpreserve(zzz) {
 let g = document.querySelectorAll('span[class^="target"]');
 g.forEach(g => {
   g.setAttribute('hx-preserve','');
   })
 htmx.process( document.querySelector('#contentTarget') );  
+console.log(zzz);
 };
    </script>
   
