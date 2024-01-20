@@ -90,6 +90,14 @@ document.addEventListener('htmx:beforeOnLoad', (evt) => {
      // console.log(fileList);
      
     } catch { console.log('error') };
+
+function addHXpreserve() {
+let g = document.querySelectorAll('span[class^="target"]');
+g.forEach(g => {
+  g.setAttribute('hx-preserve','');
+  }) 
+};
+ 
 });
  
 function newFile() {
@@ -125,12 +133,6 @@ console.log('Reload success!');
  
 },1000); 
  
-function addHXpreserve() {
-let g = document.querySelectorAll('span[class^="target"]');
-g.forEach(g => {
-  g.setAttribute('hx-preserve','');
-  }) 
-};
  
    </script>
   
