@@ -42,8 +42,7 @@
 {{#data}}
    <div class="contentItem">
      <span hx-get="{{download_url}}" data-sha="target{{sha}}" hx-swap="innerHTML"  
-           hx-indicator="#indicator" hx-trigger="load delay:0.5s">
-     <span id="indicator" class="custom-loader htmx-indicator"></span>      
+           hx-indicator="#indicator" hx-trigger="load delay:0.5s">  
      </span>
     <div class="editLink">
      <a hx-get="{{download_url}}" hx-target=".target{{sha}}" hx-on:click="addHXpreserve(this)" class="reload">Reload</a> &nbsp;
@@ -131,7 +130,9 @@ let g = document.querySelectorAll('span[class^="target"]');
 g.forEach(g => {
   g.setAttribute('hx-preserve','');
   })
-htmx.process( document.querySelector('#contentTarget') );  
+let h = document.querySelector('#contentTarget'); 
+htmx.process( h );
+htmx.closest( h , 'span'); 
 console.log(zzz);
 };
    </script>
