@@ -42,7 +42,7 @@
 {{#data}}
    <div class="contentItem">
      <span hx-get="{{download_url}}" data-sha="target{{sha}}" hx-swap="innerHTML"  
-           hx-indicator="#indicator" hx-trigger="load delay:0.5s" class="target">
+           hx-indicator="#indicator" hx-trigger="load delay:0.5s">
      <span id="indicator" class="custom-loader htmx-indicator"></span>      
      </span>
     <div class="editLink">
@@ -111,6 +111,8 @@ window.open(a, 'HTMXpinboard', params);
 };
 
 
+setTimeout( ()=>{
+
 const reloader = document.querySelectorAll('.reload');
 reloader.forEach(reloader => {
   box.addEventListener('click', function handleClick(event) {
@@ -119,9 +121,12 @@ reloader.forEach(reloader => {
     this.removeAttribute('hx-preserve');
   });
 });
+console.log('Reload success!');
+ 
+},1000); 
  
 function addHXpreserve() {
-let g = document.querySelectorAll('.target');
+let g = document.querySelectorAll('span[class^="target"]');
 g.forEach(g => {
   g.setAttribute('hx-preserve','');
   }) 
