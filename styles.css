@@ -66,11 +66,12 @@ From: https://www.cssportal.com/css-loader-generator/
 }
 
 /* On screens that are 300px or less */
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 500px) {
 #contentTarget {
     column-count: 2;
   }
 }
+
 .indicator {
   cursor: pointer;
 }
