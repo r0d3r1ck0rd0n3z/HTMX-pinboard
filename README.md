@@ -5,7 +5,7 @@ See demo here:
 https://r0d3r1ck0rd0n3z.github.io/HTMX-pinboard/
 
 
-Uses HTMX to create a minimal pseudo pinterest-clone. Note that this is very barebones and minimal as it was only created for self-study.
+Uses HTMX to create a minimal pseudo pinterest-clone. Note that this is very barebones as it was only created for self-study.
 
 
 HTMX loads all text files saved in the `text` directory and displays them as an ideaboard (via CSS magic).
