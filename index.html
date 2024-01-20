@@ -126,11 +126,12 @@ console.log('Reload success!');
  
 },1000); 
  
- function addHXpreserve() {
+function addHXpreserve() {
 let g = document.querySelectorAll('span[class^="target"]');
 g.forEach(g => {
   g.setAttribute('hx-preserve','');
-  }) 
+  })
+htmx.process(document.querySelector('#contentTarget');  
 };
    </script>
   
