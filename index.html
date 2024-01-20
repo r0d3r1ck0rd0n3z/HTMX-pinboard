@@ -81,7 +81,8 @@ document.addEventListener('htmx:beforeOnLoad', (evt) => {
      if( fileList.includes(uID) ) { 
       console.log('old');
      } else { fileList.push(uID) };
-    
+
+     htmx.addClass(evt.detail.target,'aaaa');
      console.log(fileList);
      
     } catch { console.log('error') };
