@@ -131,9 +131,11 @@ g.forEach(g => {
   g.setAttribute('hx-preserve','');
   })
 let h = document.querySelector('#contentTarget'); 
-console.log( htmx.process( h ) );
-console.log( htmx.closest( this , 'span') ); 
+htmx.process( h ) 
+console.log( this.getAttribute('hx-target') );
+console.log( htmx.closest( zzz , 'span') ); 
 console.log( zzz );
+ // htmx.find('#demo')
 };
    </script>
   
