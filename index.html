@@ -36,7 +36,7 @@
     
 {{#data}}
    <div class="contentItem">
-     <span hx-get="{{download_url}}" hx-target="#{{sha}}" id="{{name}}"
+     <span hx-get="{{download_url}}" id="{{name}}" hx-swap="innerHTML"  
            hx-indicator="#indicator" hx-trigger="load delay:1s" class="fade-me-in">
      <span id="indicator" class="custom-loader htmx-indicator"></span>      
      </span>
