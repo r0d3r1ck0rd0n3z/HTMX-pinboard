@@ -42,10 +42,10 @@
 {{#data}}
    <div class="contentItem">
      <span hx-get="{{download_url}}" data-sha="target{{sha}}" hx-swap="innerHTML"  
-           hx-indicator="#indicator" hx-trigger="load delay:0.5s">  
+           hx-indicator="#indicator" hx-trigger="load delay:0.5s,click from:.reload{{sha}}">  
      </span>
     <div class="editLink">
-     <a hx-get="{{download_url}}" hx-target=".target{{sha}}" hx-on:click="addHXpreserve(this)" class="reload">Reload</a> &nbsp;
+     <a hx-get="{{download_url}}" hx-target=".target{{sha}}" hx-on:click="addHXpreserve(this)" id="".reload{{sha}}" class="reload">Reload</a> &nbsp;
      <a href="{{html_url}}" target="_blank">Edit</a>
     </div>
    </div>
