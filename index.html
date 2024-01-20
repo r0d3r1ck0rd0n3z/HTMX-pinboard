@@ -41,7 +41,7 @@
     
 {{#data}}
    <div class="contentItem">
-     <span hx-get="{{download_url}}" data-sha="target{{sha}}" hx-swap="innerHTML"  
+     <span hx-get="{{download_url}}" data-sha="target{{sha}}" hx-swap="innerHTML" id="id{{sha}}"
            hx-indicator="#indicator" hx-trigger="load delay:0.5s,click from:#reload{{sha}}">  
      </span>
     <div class="editLink">
