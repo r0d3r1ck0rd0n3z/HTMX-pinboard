@@ -41,7 +41,7 @@
      <span id="indicator" class="custom-loader htmx-indicator"></span>      
      </span>
     <div class="editLink">
-     <a hx-get="{{download_url}}" hx-target="#{{sha}}">Reload</a> &nbsp;
+     <a hx-get="{{download_url}}" hx-target="#{{sha}}" class="reload">Reload</a> &nbsp;
      <a href="{{html_url}}" target="_blank">Edit</a>
     </div>
    </div>
@@ -77,10 +77,8 @@ document.addEventListener('htmx:beforeOnLoad', (evt) => {
      
      if( fileList.includes(uID) ) { 
       console.log('old');
-      return 
-     };
-     
-     fileList.push(uID)
+     } else { fileList.push(uID) };
+    
      console.log(fileList);
      
     } catch { console.log('error') };
