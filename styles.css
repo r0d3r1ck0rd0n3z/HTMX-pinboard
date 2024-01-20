@@ -1,3 +1,17 @@
+/* On screens that are 650px or less */
+@media screen and (max-width: 650px) {
+#contentTarget {
+    column-count: 3;
+  }
+}
+
+/* On screens that are 300px or less */
+@media screen and (max-width: 300px) {
+#contentTarget {
+    column-count: 2;
+  }
+}
+
 #contentTarget {
     display: block;
     flex-flow: wrap;
