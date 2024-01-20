@@ -1,17 +1,3 @@
-/* On screens that are 650px or less */
-@media screen and (max-width: 650px) {
-#contentTarget {
-    column-count: 3;
-  }
-}
-
-/* On screens that are 300px or less */
-@media screen and (max-width: 300px) {
-#contentTarget {
-    column-count: 2;
-  }
-}
-
 #contentTarget {
     display: block;
     flex-flow: wrap;
@@ -72,6 +58,19 @@ From: https://www.cssportal.com/css-loader-generator/
     80%{background-position:0%  50%, 50%  50%,100% 100%}
 }
 
+/* On screens that are 650px or less */
+@media screen and (max-width: 650px) {
+#contentTarget {
+    column-count: 3;
+  }
+}
+
+/* On screens that are 300px or less */
+@media screen and (max-width: 300px) {
+#contentTarget {
+    column-count: 2;
+  }
+}
 .indicator {
   cursor: pointer;
 }
