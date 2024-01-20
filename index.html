@@ -15,7 +15,7 @@
 
 <div hx-ext="client-side-templates" hx-history="false">
 <p>HTMX loads content of text files saved inside the GitHub folder <a href="https://github.com/r0d3r1ck0rd0n3z/HTMX-pinboard/tree/master/text" target="_blank">here</a>.</p>
- 
+
 <div>
 <button class="JSON_One"
         hx-get="https://api.github.com/repos/r0d3r1ck0rd0n3z/HTMX-pinboard/contents/text"
@@ -41,12 +41,12 @@
     
 {{#data}}
    <div class="contentItem">
-     <span hx-get="{{download_url}}" data-sha="aaa{{sha}}" hx-swap="innerHTML"  
-           hx-indicator="#indicator" hx-trigger="load delay:0.5s">
+     <span hx-get="{{download_url}}" data-sha="target{{sha}}" hx-swap="innerHTML"  
+           hx-indicator="#indicator" hx-trigger="load delay:0.5s" class="target">
      <span id="indicator" class="custom-loader htmx-indicator"></span>      
      </span>
     <div class="editLink">
-     <a hx-get="{{download_url}}" hx-target=".aaa{{sha}}" class="reload">Reload</a> &nbsp;
+     <a hx-get="{{download_url}}" hx-target=".target{{sha}}" class="reload">Reload</a> &nbsp;
      <a href="{{html_url}}" target="_blank">Edit</a>
     </div>
    </div>
@@ -78,12 +78,12 @@ document.addEventListener('htmx:beforeOnLoad', (evt) => {
      if( fileTick === 0 ) {
       fileList.push(uID); 
       ++fileTick; 
-      console.log('new!');
+      console.log('initial load');
       return
      };
      
      if( fileList.includes(uID) ) { 
-      console.log('old');
+      console.log('already in list');
      } else { fileList.push(uID) };
 
      htmx.addClass(evt.detail.target, uID);
@@ -110,7 +110,23 @@ window.open(a, 'HTMXpinboard', params);
 
 };
 
-    
+
+const reloader = document.querySelectorAll('.reload');
+reloader.forEach(reloader => {
+  box.addEventListener('click', function handleClick(event) {
+    console.log(event);
+    addHXpreserve();
+    this.removeAttribute('hx-preserve');
+  });
+});
+ 
+function addHXpreserve() {
+let g = document.querySelectorAll('.target');
+g.forEach(g => {
+  g.setAttribute('hx-preserve','');
+  }) 
+};
+ 
    </script>
   
 </body></html>
