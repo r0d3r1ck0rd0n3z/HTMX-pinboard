@@ -35,11 +35,12 @@
 <template id="getMyContent">
     
 {{#data}}
-   <div class="contentItem"><div id="{{sha}}">
-     <span hx-get="{{download_url}}" hx-target="#{{sha}}"
+   <div class="contentItem">
+     <span hx-get="{{download_url}}" hx-target="#{{sha}}" id="{{name}}"
            hx-indicator="#indicator" hx-trigger="load delay:1s" class="fade-me-in">
      <span id="indicator" class="custom-loader htmx-indicator"></span>      
-     </span></div>
+     </span>
+    <div id="{{sha}}"></div>
     <div class="editLink">
      <a hx-get="{{download_url}}" hx-target="#{{sha}}" class="reload">Reload</a> &nbsp;
      <a href="{{html_url}}" target="_blank">Edit</a>
