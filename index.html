@@ -45,7 +45,7 @@
            hx-indicator="#indicator" hx-trigger="load delay:0.5s,click from:#reload{{sha}}">  
      </span>
     <div class="editLink">
-     <a hx-get="{{download_url}}" hx-target=".target{{sha}}" hx-on:click="addHXpreserve(this)" id="reload{{sha}}" class="reload">Reload</a> &nbsp;
+     <a hx-on:click="addHXpreserve(this)" id="reload{{sha}}" class="reload">Reload</a> &nbsp;
      <a href="{{html_url}}" target="_blank">Edit</a>
     </div>
    </div>
@@ -57,7 +57,7 @@
 </div>
 <!-- 
 hx-swap="innerHTML"   
-   
+hx-get="{{download_url}}" hx-target=".target{{sha}}"    
  -->
 
 <!-- HELPER SCRIPTS -->   
@@ -123,7 +123,6 @@ reloader.forEach(reloader => {
     this.removeAttribute('hx-preserve');
   });
 });
-console.log('Reload success!');
  
 },1000); 
  
@@ -134,10 +133,11 @@ g.forEach(g => {
   })
 let h = document.querySelector('#contentTarget'); 
 htmx.process( h ) 
-console.log( zzz.getAttribute('hx-target') );
+console.log( zzz.getAttribute('id') );
 console.log( htmx.closest( zzz , 'span') ); 
 console.log( zzz );
  // htmx.find('#demo')
+console.log('---Reload success!---'); 
 };
    </script>
   
