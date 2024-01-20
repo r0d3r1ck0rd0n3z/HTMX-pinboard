@@ -32,6 +32,10 @@
     font-size: 10px;
 }
 
+.reload {
+    pointer: cursor;
+}
+
 /* 
 From: https://www.cssportal.com/css-loader-generator/
 */
