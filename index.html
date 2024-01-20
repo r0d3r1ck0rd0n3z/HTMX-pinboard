@@ -36,7 +36,7 @@
     
 {{#data}}
    <div class="contentItem">
-     <span hx-get="{{download_url}}" id="xx{{name}}" hx-swap="innerHTML"  
+     <span hx-get="{{download_url}}" data-sha="{{sha}}" hx-swap="innerHTML"  
            hx-indicator="#indicator" hx-trigger="load delay:1s">
      <span id="indicator" class="custom-loader htmx-indicator"></span>      
      </span>
@@ -69,7 +69,7 @@ let fileList = [];
 let fileTick = 0;
 document.addEventListener('htmx:beforeOnLoad', (evt) => {
     try{ 
-     let uID = evt.detail.target.getAttribute('sha');  
+     let uID = evt.detail.target.getAttribute('data-sha');  
      
      if( fileTick === 0 ) {
       fileList.push(uID); 
