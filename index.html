@@ -87,7 +87,7 @@ document.addEventListener('htmx:beforeOnLoad', (evt) => {
 
      htmx.addClass(evt.detail.target, uID);
      // console.log(fileList);
-     console.log(evt.detail.elt);
+     console.log( evt.detail.elt.getAttribute('class') );
      
      
     } catch { console.log('error') };
