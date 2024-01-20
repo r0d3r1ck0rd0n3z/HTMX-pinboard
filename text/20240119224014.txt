@@ -1,2 +1,2 @@
 <b>Preserving Content During A Swap</b><br>
-If there is content that you wish to be preserved across swaps (e.g. a video player that you wish to remain playing even if a swap occurs) you can use the hx-preserve attribute on the elements you wish to be preserved.
+EDITED: If there is content that you wish to be preserved across swaps (e.g. a video player that you wish to remain playing even if a swap occurs) you can use the hx-preserve attribute on the elements you wish to be preserved.
