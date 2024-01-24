@@ -19,7 +19,7 @@
 <div>
 <button class="JSON_One"
         hx-get="https://api.github.com/repos/r0d3r1ck0rd0n3z/HTMX-pinboard/contents/text"
-        hx-swap="innerHTML settle" 
+        hx-swap="innerHTML settle:2s" 
         hx-target="#contentTarget" 
         mustache-array-template="getMyContent" 
         hx-indicator="#indicator"
